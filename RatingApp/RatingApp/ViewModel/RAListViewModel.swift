@@ -9,12 +9,10 @@
 import Foundation
 import Combine
 
-class ListViewModel: ObservableObject {
-    
-    private var bookList:[Book]
+class RAListViewModel: ObservableObject {
+    var bookList:[Book]
     
     init(bookList: [Book]) {
         self.bookList = bookList
     }
-    
 }

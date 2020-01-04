@@ -9,14 +9,23 @@
 import SwiftUI
 
 struct RAListView: View {
-    @ObservedObject var viewModel: ListViewModel
-    init(viewModel: ListViewModel) {
+    @ObservedObject var viewModel: RAListViewModel
+    init(viewModel: RAListViewModel) {
         self.viewModel = viewModel
     
     }
     
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List {
+                ForEach(self.viewModel.bookList, id: \.title ) { book in
+                    Text("Name")
+                }
+                
+            }
+            
+        }
+        
     }
 }
 
