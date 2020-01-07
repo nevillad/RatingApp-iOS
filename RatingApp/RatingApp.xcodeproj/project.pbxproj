@@ -19,6 +19,11 @@
 		6D27A7AA23C1023E00856164 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27A7A923C1023E00856164 /* Book.swift */; };
 		6D27A7AD23C1062D00856164 /* RAListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27A7AC23C1062D00856164 /* RAListViewModel.swift */; };
 		6D38CEAB23C1179200F45DF3 /* RAListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38CEAA23C1179200F45DF3 /* RAListItemViewModel.swift */; };
+		6D38CEB023C1BF4600F45DF3 /* RAListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D38CEAF23C1BF4600F45DF3 /* RAListItemView.swift */; };
+		6DCCF76723C439DF00A01392 /* RARatingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCCF76623C439DF00A01392 /* RARatingCircle.swift */; };
+		6DDD80B823C1F6650005A154 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD80B723C1F6650005A154 /* Font.swift */; };
+		6DDD80BB23C1FB7D0005A154 /* PosterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD80BA23C1FB7D0005A154 /* PosterStyle.swift */; };
+		6DDD80BD23C22C020005A154 /* RARatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD80BC23C22C020005A154 /* RARatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		6D27A7A923C1023E00856164 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		6D27A7AC23C1062D00856164 /* RAListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAListViewModel.swift; sourceTree = "<group>"; };
 		6D38CEAA23C1179200F45DF3 /* RAListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAListItemViewModel.swift; sourceTree = "<group>"; };
+		6D38CEAF23C1BF4600F45DF3 /* RAListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAListItemView.swift; sourceTree = "<group>"; };
+		6DCCF76623C439DF00A01392 /* RARatingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARatingCircle.swift; sourceTree = "<group>"; };
+		6DDD80B723C1F6650005A154 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		6DDD80BA23C1FB7D0005A154 /* PosterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterStyle.swift; sourceTree = "<group>"; };
+		6DDD80BC23C22C020005A154 /* RARatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +117,14 @@
 		6D27A77423C0FC5400856164 /* RatingApp */ = {
 			isa = PBXGroup;
 			children = (
+				6DDD80B923C1FB6F0005A154 /* Modifier */,
+				6DDD80B623C1F6410005A154 /* Extention */,
+				6D38CEAC23C1BF1E00F45DF3 /* View */,
 				6D27A7AB23C1048E00856164 /* ViewModel */,
 				6D27A7A823C1022700856164 /* Model */,
 				6D27A7A523C0FD6500856164 /* Assets */,
 				6D27A77523C0FC5400856164 /* AppDelegate.swift */,
 				6D27A77723C0FC5400856164 /* SceneDelegate.swift */,
-				6D27A77923C0FC5400856164 /* RAListView.swift */,
 				6D27A77B23C0FC5800856164 /* Assets.xcassets */,
 				6D27A78023C0FC5800856164 /* LaunchScreen.storyboard */,
 				6D27A78323C0FC5800856164 /* Info.plist */,
@@ -170,6 +182,41 @@
 				6D38CEAA23C1179200F45DF3 /* RAListItemViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D38CEAC23C1BF1E00F45DF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6DCCF76523C439C700A01392 /* Shared */,
+				6D27A77923C0FC5400856164 /* RAListView.swift */,
+				6D38CEAF23C1BF4600F45DF3 /* RAListItemView.swift */,
+				6DDD80BC23C22C020005A154 /* RARatingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6DCCF76523C439C700A01392 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6DCCF76623C439DF00A01392 /* RARatingCircle.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6DDD80B623C1F6410005A154 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				6DDD80B723C1F6650005A154 /* Font.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		6DDD80B923C1FB6F0005A154 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				6DDD80BA23C1FB7D0005A154 /* PosterStyle.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,8 +354,13 @@
 				6D27A7AD23C1062D00856164 /* RAListViewModel.swift in Sources */,
 				6D38CEAB23C1179200F45DF3 /* RAListItemViewModel.swift in Sources */,
 				6D27A7AA23C1023E00856164 /* Book.swift in Sources */,
+				6DDD80BB23C1FB7D0005A154 /* PosterStyle.swift in Sources */,
+				6DDD80BD23C22C020005A154 /* RARatingView.swift in Sources */,
 				6D27A77623C0FC5400856164 /* AppDelegate.swift in Sources */,
+				6DCCF76723C439DF00A01392 /* RARatingCircle.swift in Sources */,
+				6DDD80B823C1F6650005A154 /* Font.swift in Sources */,
 				6D27A77823C0FC5400856164 /* SceneDelegate.swift in Sources */,
+				6D38CEB023C1BF4600F45DF3 /* RAListItemView.swift in Sources */,
 				6D27A77A23C0FC5400856164 /* RAListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

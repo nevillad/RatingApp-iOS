@@ -14,8 +14,9 @@ struct Book: Codable {
     let pages: Int?
     let title: String?
     let year: Int?
-    let rate: Double?
+    var rate: Int?
 }
 
 
+let sampelBook = Book(author: "Nevil Lad", country: "India", imageLink: "Real SwiftUI", language: "Swift", link: "", pages: 77, title: "Real SwiftUI", year: 2019, rate: 6)
 

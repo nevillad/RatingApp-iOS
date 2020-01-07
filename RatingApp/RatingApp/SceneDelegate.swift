@@ -30,6 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                     let bookList = try JSONDecoder().decode(Array<Book>.self, from: data)
                     print("Books List \(bookList)")
+                    
+                    
                     let listView = RAListView(viewModel: RAListViewModel(bookList: bookList))
 
                     if let windowScene = scene as? UIWindowScene {

@@ -10,9 +10,21 @@ import Foundation
 import Combine
 
 class RAListViewModel: ObservableObject {
-    var bookList:[Book]
+    @Published var dataSource: [RAListItemViewModel] = []
     
     init(bookList: [Book]) {
-        self.bookList = bookList
+        for book in bookList {
+            self.dataSource.append(RAListItemViewModel(book: book))
+        }
+    }
+    
+    func refresh() {
+        dataSource.sort {
+            $0.rating > $1.rating
+        }
+    }
+    
+    func randomOrdering() {
+        
     }
 }
