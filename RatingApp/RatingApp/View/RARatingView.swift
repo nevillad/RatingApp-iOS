@@ -59,31 +59,10 @@ struct RARatingView: View {
                     Text("Done").font(.title)
                         .fontWeight(.medium)
                }.buttonStyle(GradientBackgroundStyle())
-//            Button(action: {
-//                print("Delete tapped!")
-//            }) {
-//                HStack {
-//                    Image(systemName: "trash")
-//                        .font(.title)
-//                    Text("Delete")
-//                        .fontWeight(.semibold)
-//                        .font(.title)
-//                }
-//            }
-            
-                
                 Spacer()
-//                Button(action: {
-//                    self.isPresent = false
-//                }) {
-//                    Text("SET RATING")
-//                }
-//                Spacer()
             }.padding(.all, 20)
             Spacer()
-            
         }.padding(20)
-        
     }
 }
 

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RARatingCircle: View {
-    let score: Int
+    @State var score: Int
     
     @State var isDisplayed = false
     

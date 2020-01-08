@@ -17,10 +17,18 @@ struct RAListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.dataSource, content: RAListItemView.init(viewModel:))
-            }.onAppear(perform: viewModel.refresh)
+            VStack {
+                HStack {
+                    Toggle(isOn: self.$viewModel.randomOrder, label: {Text("Random Order")})
+                }.padding(.all, 20)
+                    
+                List {
+                    ForEach(self.viewModel.dataSource, content: RAListItemView.init(viewModel:))
+                }.onAppear(perform: viewModel.refresh )
+            }
+            .navigationBarTitle(Text("Books Rating"))
         }
+        
     }
 }
 

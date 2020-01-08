@@ -11,6 +11,17 @@ import Combine
 
 class RAListViewModel: ObservableObject {
     @Published var dataSource: [RAListItemViewModel] = []
+    @Published var randomOrder:Bool = false {
+        didSet (value) {
+            if !value {
+                self.startTimer()
+            }else {
+                self.stopTimer()
+            }
+        }
+    }
+    
+    private var gameTimer: Timer?
     
     init(bookList: [Book]) {
         for book in bookList {
@@ -24,7 +35,18 @@ class RAListViewModel: ObservableObject {
         }
     }
     
-    func randomOrdering() {
-        
+    func startTimer() {
+        gameTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(randomOrdering), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        gameTimer?.invalidate()
+    }
+    
+    @objc func randomOrdering() {
+        let randomIndex = Int.random(in: 0..<self.dataSource.count)
+        let randomRating = Float.random(in: 1...9)
+        self.dataSource[randomIndex].rating = randomRating
+        self.refresh()
     }
 }

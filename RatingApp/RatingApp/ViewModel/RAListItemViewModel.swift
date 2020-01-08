@@ -31,15 +31,12 @@ class RAListItemViewModel: Identifiable, ObservableObject {
         return author
     }
     
-    
     var bookDetailLine1: String {
         return String(format: "Author: %@, %d, Pages - %d", self.author , self.book.year ?? "N/A", self.book.pages ?? "N/A")
-        
     }
     
     var bookDetailLine2: String {
         return String(format: "%@ - %@", self.book.country ?? "N/A", self.book.language ?? "N/A")
-        
     }
     
     var rating: Float {
@@ -51,8 +48,6 @@ class RAListItemViewModel: Identifiable, ObservableObject {
             self.book.rate = Int(value)
         }
     }
-    
-    
     
 }
 

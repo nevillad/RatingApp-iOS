@@ -51,6 +51,7 @@ struct RAListItemView: View {
                     }
                 }.padding(.leading, 8)
             }
+            .transition(.identity)
         }
     }
 }
