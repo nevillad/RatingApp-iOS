@@ -15,32 +15,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-        // Create the SwiftUI view that provides the window contents.
         
-
         if let path = Bundle.main.path(forResource: "Books", ofType: "json") {
             do {
-
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 do {
-
                     let bookList = try JSONDecoder().decode(Array<Book>.self, from: data)
                     print("Books List \(bookList)")
-                    
-                    
                     let listView = RAListView(viewModel: RAListViewModel(bookList: bookList))
-
                     if let windowScene = scene as? UIWindowScene {
                         let window = UIWindow(windowScene: windowScene)
                         window.rootViewController = UIHostingController(rootView: listView)
                         self.window = window
                         window.makeKeyAndVisible()
                     }
-                    
                } catch let error {
                    print(error)
                }

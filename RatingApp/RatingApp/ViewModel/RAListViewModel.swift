@@ -25,7 +25,10 @@ class RAListViewModel: ObservableObject {
     
     init(bookList: [Book]) {
         for book in bookList {
-            self.dataSource.append(RAListItemViewModel(book: book))
+            let listItemViewModel = RAListItemViewModel(book: book)
+            if !dataSource.contains(listItemViewModel) {
+                self.dataSource.append(listItemViewModel)
+            }
         }
     }
     
@@ -48,5 +51,9 @@ class RAListViewModel: ObservableObject {
         let randomRating = Float.random(in: 1...9)
         self.dataSource[randomIndex].rating = randomRating
         self.refresh()
+    }
+    
+    func listItemViewModelAtIndex(index: Int) -> RAListItemViewModel {
+        return self.dataSource[index]
     }
 }
