@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import MapKit
 
-class RAListItemViewModel: Identifiable, ObservableObject {
+class RAListItemViewModel: Identifiable, ObservableObject, Equatable {
     private var book: Book
     
     init(book: Book) {
@@ -18,21 +18,19 @@ class RAListItemViewModel: Identifiable, ObservableObject {
     }
     
     var id: String {
-       return title + author
+        return title + author
     }
      
     var title: String {
-       guard let title = book.title else { return "" }
-       return title
+       return book.title
     }
      
     var author: String {
-        guard let author = book.author else { return "" }
-        return author
+        return book.author
     }
     
     var bookDetailLine1: String {
-        return String(format: "Author: %@, %d, Pages - %d", self.author , self.book.year ?? "N/A", self.book.pages ?? "N/A")
+        return String(format: "Author: %@, %d, Pages - %d", self.author , self.book.year ?? "N/A", self.book.pages)
     }
     
     var bookDetailLine2: String {
@@ -48,6 +46,12 @@ class RAListItemViewModel: Identifiable, ObservableObject {
             self.book.rate = Int(value)
         }
     }
-    
+}
+
+func == (lhs: RAListItemViewModel, rhs: RAListItemViewModel) -> Bool {
+    if lhs.id != rhs.id{
+         return false
+     }
+    return true
 }
 
